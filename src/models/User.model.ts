@@ -47,3 +47,5 @@ const UserSchema: Schema<User> = new Schema({
     },
     message: [MessageSchema]
 })
+
+const userModel = (mongoose.models.User as mongoose.Model<User> )|| (mongoose.model<User>("User", UserSchema))
