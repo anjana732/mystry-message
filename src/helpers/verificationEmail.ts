@@ -8,6 +8,14 @@ export async function verificationEmail(
     verifyCode: string
 ): Promise<ApiResponse> {
     try{
-        
+        await resend.send({
+            from: '',
+            to: '',
+            subject: ' ',
+            react: VerificationEmail({})
+        })
+        return {success: true, message: 'Verification sent successfully'}
+    }catch(error){
+
     }
 }
